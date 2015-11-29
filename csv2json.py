@@ -6,6 +6,8 @@ jsonfile = open('collab.json', 'w')
 
 fieldnames = ("Subject Discipline","Topic Name","Keyword","Hint")
 reader = csv.DictReader(csvfile, fieldnames)
+reader = unicode(reader)
+
 topics = {}
 
 for row in reader:
@@ -21,4 +23,6 @@ for row in reader:
 			
 	}
 	topics[row["Topic Name"]].push(obj)
+
+topics.encode('utf-8')
 jsonfile.write(topics)
