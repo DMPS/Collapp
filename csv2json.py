@@ -11,10 +11,10 @@ reader = unicode(reader)
 topics = {}
 
 for row in reader:
-	if topics[row["Topic Name"]] = None:
+	if topics[row["Topic Name"]] is None:
 		topic_name = row["Topic Name"]
 		#create a new object
-		topics[topic_name] = '"' + topic_name + '"' +":[]"	
+		topics[topic_name] = []
 	obj = {
 
 			"Keyword":row["Keyword"],
@@ -22,7 +22,7 @@ for row in reader:
 			"Subject Discipline":row["Subject Discipline"]
 			
 	}
-	topics[row["Topic Name"]].push(obj)
+	topics[row["Topic Name"]].append(obj)
 
 topics.encode('utf-8')
 jsonfile.write(topics)
